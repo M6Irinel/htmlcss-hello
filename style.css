@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body > *{
+    margin: 20px;
+}
+
+/* variabili create */
+:root{
+    --shadow: red;
+    --shadow2: rgba(0, 0, 0, 0.5);
+    --shadow3: rgba(255, 0, 0, 0.267);
+    --boxShadow: rgba(255, 0, 0, 0.8);
+    --boxShadow2: rgba(0, 0, 0, 0.5);
+    --neon: white;
+    --neon2: rgb(212, 212, 212);
+    
+}
+
+/* ---------------------------------------------------------------------- */
+/* TITLE */
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    filter: blur(1px);
+    font-size: 100px;
+    border: 10px solid black;
+    border-radius: 60px;
+    animation: anim_title_light 1s linear infinite;
+    height: 140px;
+}
+
+/* Animazione Tittolo */
+@keyframes anim_title_light {
+    0%{
+        color: var(--neon);
+        filter: blur(0.8px);
+
+        box-shadow: 20px 20px 10px rgb(41, 41, 41), 30px 30px 20px var(--boxShadow);
+
+        text-shadow: 10px 10px 20px var(--shadow), 10px -10px 20px var(--shadow), -10px 10px 20px var(--shadow), -10px -10px 20px var(--shadow);
+    }
+    49%{
+        color: var(--neon);
+        filter: blur(0.8px);
+
+        box-shadow: 20px 20px 10px rgb(41, 41, 41), 30px 30px 20px var(--boxShadow);
+
+        text-shadow: 10px 10px 20px var(--shadow), 10px -10px 20px var(--shadow), -10px 10px 20px var(--shadow), -10px -10px 20px var(--shadow);
+    }
+    50%{
+        color: var(--neon2);
+        filter: blur(0.5px);
+
+        box-shadow: 20px 20px 10px rgb(41, 41, 41), 30px 30px 20px var(--boxShadow2);
+
+        text-shadow: 10px 10px 10px var(--shadow2);
+    }
+    100%{
+        color: var(--neon2);
+        filter: blur(0.5px);
+
+        box-shadow: 20px 20px 10px rgb(41, 41, 41), 30px 30px 20px var(--boxShadow2);
+
+        text-shadow: 10px 10px 10px var(--shadow2);
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+/* BUTTON */
+
+button{
+    transition: background-color .3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    background-color: antiquewhite;
+    box-shadow: 5px 5px 3px rgb(34, 34, 34);
+
+    border: 3px solid;
+    border-radius: 20px;
+
+    font-size: 12px;
+    line-height: 15px;
+
+    margin-top: 60px;
+    position: relative;
+}
+
+button::before {
+    content: "";
+    width: 105%;
+    height: 15px;
+    display: block;
+    background-color: aqua;
+    position: absolute;
+    top: -1%;
+    border-radius: 15px 15px 0 0;
+    filter: blur(10px);
+
+    animation: anim_buton_light 1s linear infinite;
+}
+
+@keyframes anim_buton_light {
+    0%{
+        background-color: var(--shadow3);
+    }
+    49%{
+        background-color: var(--shadow3);
+    }
+    50%{
+        background-color: transparent;
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+
+button:hover{
+    transition: background-color .3s;
+    background-color: rgb(200, 255, 161);
+    cursor: pointer;
+}
+
+button:active {
+    transition: all 0.1s;
+    box-shadow: none;
+    font-size: 11.5px;
+}
+
+/* parola "EFFECT" */
+
+button strong {
+    font-size: 16px;
+    transition: all 0.1s;
+}
+
+button:active > strong {
+    transition: all 0.1s;
+    font-size: 15.5px;
+}
